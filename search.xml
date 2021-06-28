@@ -6,4 +6,36 @@
     <content><![CDATA[<p>#你为什么来到这里？<br>–关于这里的一切，这里是我的秘密基地；</p>
 ]]></content>
   </entry>
+  <entry>
+    <title></title>
+    <url>/2021/06/28/1.%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p><strong>动态规划，包含3个重要的概念： 1. 最优子结构 2. 边界3. 状态方程</strong></p>
+<p>思考问题： 如何优化动态规划问题？如果dp[i] 只和dp[i-1]有关，那么可以使用【滚动变量】的方式将代码进行优化。</p>
+<h2 id="1-53-最大子序和"><a href="#1-53-最大子序和" class="headerlink" title="1. 53. 最大子序和"></a>1. <a href="https://leetcode-cn.com/problems/maximum-subarray/">53. 最大子序和</a></h2><ul>
+<li><p><code>dp[i]</code>：表示以 <code>nums[i]</code> **结尾的 <strong>连续</strong> 子数组的最大和。</p>
+</li>
+<li><p>状态转移方程<br>$$<br>dp[i]=\left{<br>\begin{aligned}<br>dp[i-1]+nums[i] &amp; &amp; dp[i-1]&gt;=0\<br>nums[i] &amp; &amp; dp&lt; 0<br>\end{aligned}<br>\right.<br>$$</p>
+<p>$$<br>dp[i] = max(dp[i-1]+nums[i],nums[i])<br>$$</p>
+</li>
+<li><p>思考初始问题： dp[0 ] = nums[0].</p>
+</li>
+</ul>
+<pre><code class="python">def maxSubArray(nums):
+    if len(nums) == 0: return 0
+    dp = [0 for _ in range(len(nums))]
+    dp[0] = nums[0]
+    for i in range(len(nums)):
+        dp[i] = max(dp[i-1]+nums[i],nums[i])
+    return max(dp)
+def maxSubArray(nums):
+    if len(nums) == 0: return 0
+    pre = nums[0]
+    res = 0
+    for i in range(len(nums)):
+        pre = max(pre+nums[i],nums[i])
+        res = max(res,pre)
+    return res
+</code></pre>
+]]></content>
+  </entry>
 </search>
