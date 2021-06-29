@@ -11,6 +11,9 @@
     <url>/2021/06/28/1.%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
     <content><![CDATA[<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p><strong>动态规划，包含3个重要的概念： 1. 最优子结构 2. 边界3. 状态方程</strong></p>
 <p>思考问题： 如何优化动态规划问题？如果dp[i] 只和dp[i-1]有关，那么可以使用【滚动变量】的方式将代码进行优化。</p>
+<ul>
+<li>当前状态至于前两个状态有关，只需要想办法存储前两个状态就可以了。</li>
+</ul>
 <h2 id="1-53-最大子序和"><a href="#1-53-最大子序和" class="headerlink" title="1. 53. 最大子序和"></a>1. <a href="https://leetcode-cn.com/problems/maximum-subarray/">53. 最大子序和</a></h2><ul>
 <li><p><code>dp[i]</code>：表示以 <code>nums[i]</code> **结尾的 <strong>连续</strong> 子数组的最大和。</p>
 </li>
@@ -36,6 +39,15 @@ def maxSubArray(nums):
         res = max(res,pre)
     return res
 </code></pre>
+<h2 id="2-322-零钱兑换"><a href="#2-322-零钱兑换" class="headerlink" title="2. 322. 零钱兑换"></a>2. <a href="https://leetcode-cn.com/problems/coin-change/">322. 零钱兑换</a></h2><p>​    <strong>步骤：</strong></p>
+<ol>
+<li>确定base case </li>
+<li>确定【状态】，也就是原问题和子问题中会变化的变量</li>
+<li>确定【选择】，也就是导致【状态】产生变化的行为</li>
+<li>明确dp函数/数组的定义</li>
+</ol>
+<img src="https://pic.leetcode-cn.com/2cdf411d73e7f4990c63c9ff69847c146311689ebc286d3eae715fa5c53483cf-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202020-03-08%2010.23.03.png" style="zoom:50%;" />
+
 ]]></content>
   </entry>
 </search>
