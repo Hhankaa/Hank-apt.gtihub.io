@@ -48,6 +48,32 @@ def maxSubArray(nums):
 </ol>
 <img src="https://pic.leetcode-cn.com/2cdf411d73e7f4990c63c9ff69847c146311689ebc286d3eae715fa5c53483cf-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202020-03-08%2010.23.03.png" style="zoom:50%;" />
 
+<h2 id="3-121-买卖股票的最佳时机"><a href="#3-121-买卖股票的最佳时机" class="headerlink" title="3. 121. 买卖股票的最佳时机"></a>3. <a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">121. 买卖股票的最佳时机</a></h2><p><strong>买一次，卖一次</strong>，max-min 就可以得到最大的利润，那就要得到这个<strong>最小值</strong>，遍历整个list，每次都与当前的最小值相减，得到当前的最大值即可。</p>
+<pre><code class="Python">  def maxProfit(self, prices: List[int]) -&gt; int:
+        n = len(prices)
+        if n &lt; 0 : return 0
+        dp = [0]*n
+        minPrice = prices[0]
+
+        for i in range(n):
+            minPrice = min(prices[i],minPrice)
+            dp[i] = max(dp[i-1],prices[i]-minPrice)
+        return max(dp)
+</code></pre>
+<p>因为dp[i] 只和 dp[i-1]有关，所以可以进行状态压缩</p>
+<pre><code class="Python">    def maxProfit(self, prices: List[int]) -&gt; int:
+        n = len(prices)
+        if n &lt; 0 : return 0
+        minPrice = prices[0]
+        maxProfit = 0
+        for i in range(n):
+            minPrice = min(prices[i],minPrice)
+            maxProfit = max(maxProfit,prices[i]-minPrice)
+        return maxProfit
+</code></pre>
 ]]></content>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
   </entry>
 </search>
