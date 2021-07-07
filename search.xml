@@ -71,6 +71,12 @@ def maxSubArray(nums):
             maxProfit = max(maxProfit,prices[i]-minPrice)
         return maxProfit
 </code></pre>
+<h2 id="4-300-最长递增子序列"><a href="#4-300-最长递增子序列" class="headerlink" title="4. 300. 最长递增子序列"></a>4. <a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/">300. 最长递增子序列</a></h2><ul>
+<li><p>定义一个dp[i] 表示，nums 中前面i个元素中最长递增子序列的长度，初始化长度为len(nums) ，初始值为1</p>
+<img src = "https://pic.leetcode-cn.com/7ae911e51d39c7007ad8d548566abe40a84e5deb3cd682fd071080cd307f71f5-Picture1.png" style ="zoom:30%" /></li>
+<li><p>$$<br>dp[i] = max(dp[i],dp[j]+1)<br>$$</p>
+</li>
+</ul>
 ]]></content>
       <tags>
         <tag>Algorithm</tag>
