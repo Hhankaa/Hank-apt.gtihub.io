@@ -1,115 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    
-    <title>SecretWorld - 汉渴</title>
-    <meta charset="utf-8">
-    
-    <meta name="title" content="SecretWorld - 汉渴">
-    <meta name="description" content="">
-    <meta property="og:image" content="/favicon.png">
-    <meta property="og:image:width" content="200" />
-    <meta property="og:image:height" content="200" />
-    
-    <link href="https://fonts.loli.net // 国内更快/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.loli.net // 国内更快/css2?family=Noto+Serif+TC:wght@400;700&amp;family=Noto+Serif+KR:wght@400;700&amp;family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Source Serif Pro', 'Source Han Serif TC', 'Noto Serif CJK TC', 'Noto Serif TC', 'Noto Serif KR', 'Noto Serif SC', serif
-        }
-    </style>
-    <link rel="shortcut icon" href="/favicon.png">
-    
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa@2.0.0/dist/shikwasa.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/shikwasa@2.0.0/dist/shikwasa.min.js"></script>
-    
-    
-<link rel="stylesheet" href="/css/style.css">
+extends includes/layout.pug
 
-    
-<script src="/js/jquery.min.js"></script>
+block content
+  #post
+    if top_img === false
+      include includes/header/post-info.pug
 
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-
-<body>
-    <header class="header">
-    <div class="blog-title">
-        <a href="/" class="logo">汉渴</a>
-    </div>
-    <nav class="navbar">
-        <ul class="menu">
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/" class="menu-item-link">主页</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/archives" class="menu-item-link">归档</a>
-                
-            </li>
-            
-            
-            
-            <li class="menu-item">
-                
-                <a href="/about" class="menu-item-link">关于</a>
-                
-            </li>
-            
-        </ul>
-    </nav>
-</header>
-    <main class="main">
-        <article class="post">
-    <div class="post-title">
-        <h1 class="title">SecretWorld</h2>
-    </div>
-    <div class="post-content">
-        <p>#你为什么来到这里？<br>– 关于这里的一切，这里是我的秘密基地；<br>#今天还是觉得有点枯燥<br>– 为什么没有一些值得我做的事情？还不如在学校学习东西。</p>
-
-    </div>
-    <div class="post-meta">
+    article#article-container.post-content!=page.content
+    include includes/post/post-copyright.pug
+    .tag_share
+      if (theme.post_meta.post.tags)
+        .post-meta__tag-list
+          each item, index in page.tags.data
+            a(href=url_for(item.path)).post-meta__tags #[=item.name]
+      include includes/third-party/share/index.pug
         
-    <span class="post-time">二〇二一年六月二十日</span>
-    </div>
-</article>
+    if theme.reward.enable
+      !=partial('includes/post/reward', {}, {cache: true})
 
-<div class="prev_next">
-    <nav id="prev_next">
+    //- ad
+    if theme.ad && theme.ad.post
+      .ads-wrap!=theme.ad.post
 
-<div class="prev">
-    
-    <p>Newer</p>
-    <a href="/2021/06/28/1.动态规划/"><div class="article-nav-title">1.动态规划</div></a>
-    
-</div>
-<div class="next">
-    
-</div>
+    if theme.post_pagination
+      include includes/pagination.pug
+    if theme.related_post && theme.related_post.enable
+      != related_posts(page,site.posts)
 
-</nav>
-</div>
-
-<div class="post-comment">
-    
-
-
-
-</div>
-
-    </main>
-    <p class="license">本站文章使用 CC BY-NC-SA 4.0 许可。</p>
-</body>
-
-</html>
+    if page.comments !== false && theme.comments && theme.comments.use
+      - var commentsJsLoad = true
+      !=partial('includes/third-party/comments/index', {}, {cache: true})
+      
