@@ -1,32 +1,405 @@
-extends includes/layout.pug
+<!DOCTYPE html>
+<html lang="en">
 
-block content
-  #post
-    if top_img === false
-      include includes/header/post-info.pug
-
-    article#article-container.post-content!=page.content
-    include includes/post/post-copyright.pug
-    .tag_share
-      if (theme.post_meta.post.tags)
-        .post-meta__tag-list
-          each item, index in page.tags.data
-            a(href=url_for(item.path)).post-meta__tags #[=item.name]
-      include includes/third-party/share/index.pug
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="theme-color" content="#600090">
+    <meta name="msapplication-navbutton-color" content="#600090">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
+    <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
+    <link rel="alternate" type="application/atom+xml" title="汉渴" href="/atom.xml">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
+    <title>
         
-    if theme.reward.enable
-      !=partial('includes/post/reward', {}, {cache: true})
+        1.动态规划｜undefined
+        
+    </title>
 
-    //- ad
-    if theme.ad && theme.ad.post
-      .ads-wrap!=theme.ad.post
+    <link rel="canonical" href="http://Hhankaa.github.io/2021/06/28/1.动态规划/">
 
-    if theme.post_pagination
-      include includes/pagination.pug
-    if theme.related_post && theme.related_post.enable
-      != related_posts(page,site.posts)
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 
-    if page.comments !== false && theme.comments && theme.comments.use
-      - var commentsJsLoad = true
-      !=partial('includes/third-party/comments/index', {}, {cache: true})
-      
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/blog-style.css">
+
+
+    <!-- Pygments Github CSS -->
+    
+<link rel="stylesheet" href="/css/syntax.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<style>
+
+    header.intro-header {
+        background-image: url('')
+    }
+</style>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="" class="animated fadeIn">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
+" data-ishome = "false" >
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand animated pulse" href="/">
+                <span class="brand-logo">
+                    汉渴
+                </span>
+                's Blog
+            </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <!-- /.navbar-collapse -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+					
+                    
+					
+					
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+//    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+<!-- Main Content -->
+
+<!--only post-->
+
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>1.动态规划</h1>
+                    
+                    <span class="meta">
+                         作者 Hank Han
+                        <span>
+                          日期 2021-06-28
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#Algorithm"
+                           title="Algorithm">Algorithm</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-title-haojen">
+        <span>
+            1.动态规划
+        </span>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><p><strong>动态规划，包含3个重要的概念： 1. 最优子结构 2. 边界3. 状态方程</strong></p>
+<p>思考问题： 如何优化动态规划问题？如果dp[i] 只和dp[i-1]有关，那么可以使用【滚动变量】的方式将代码进行优化。</p>
+<ul>
+<li>当前状态至于前两个状态有关，只需要想办法存储前两个状态就可以了。</li>
+</ul>
+<h2 id="1-53-最大子序和"><a href="#1-53-最大子序和" class="headerlink" title="1. 53. 最大子序和"></a>1. <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/maximum-subarray/">53. 最大子序和</a></h2><ul>
+<li><p><code>dp[i]</code>：表示以 <code>nums[i]</code> **结尾的 <strong>连续</strong> 子数组的最大和。</p>
+</li>
+<li><p>状态转移方程<br>$$<br>dp[i]=\left{<br>\begin{aligned}<br>dp[i-1]+nums[i] &amp; &amp; dp[i-1]&gt;=0\<br>nums[i] &amp; &amp; dp&lt; 0<br>\end{aligned}<br>\right.<br>$$</p>
+<p>$$<br>dp[i] = max(dp[i-1]+nums[i],nums[i])<br>$$</p>
+</li>
+<li><p>思考初始问题： dp[0 ] = nums[0].</p>
+</li>
+</ul>
+<pre><code class="python">def maxSubArray(nums):
+    if len(nums) == 0: return 0
+    dp = [0 for _ in range(len(nums))]
+    dp[0] = nums[0]
+    for i in range(len(nums)):
+        dp[i] = max(dp[i-1]+nums[i],nums[i])
+    return max(dp)
+def maxSubArray(nums):
+    if len(nums) == 0: return 0
+    pre = nums[0]
+    res = 0
+    for i in range(len(nums)):
+        pre = max(pre+nums[i],nums[i])
+        res = max(res,pre)
+    return res
+</code></pre>
+<h2 id="2-322-零钱兑换"><a href="#2-322-零钱兑换" class="headerlink" title="2. 322. 零钱兑换"></a>2. <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/coin-change/">322. 零钱兑换</a></h2><p>​    <strong>步骤：</strong></p>
+<ol>
+<li>确定base case </li>
+<li>确定【状态】，也就是原问题和子问题中会变化的变量</li>
+<li>确定【选择】，也就是导致【状态】产生变化的行为</li>
+<li>明确dp函数/数组的定义</li>
+</ol>
+<img src="https://pic.leetcode-cn.com/2cdf411d73e7f4990c63c9ff69847c146311689ebc286d3eae715fa5c53483cf-%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202020-03-08%2010.23.03.png" style="zoom:50%;" />
+
+<h2 id="3-121-买卖股票的最佳时机"><a href="#3-121-买卖股票的最佳时机" class="headerlink" title="3. 121. 买卖股票的最佳时机"></a>3. <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">121. 买卖股票的最佳时机</a></h2><p><strong>买一次，卖一次</strong>，max-min 就可以得到最大的利润，那就要得到这个<strong>最小值</strong>，遍历整个list，每次都与当前的最小值相减，得到当前的最大值即可。</p>
+<pre><code class="Python">  def maxProfit(self, prices: List[int]) -&gt; int:
+        n = len(prices)
+        if n &lt; 0 : return 0
+        dp = [0]*n
+        minPrice = prices[0]
+
+        for i in range(n):
+            minPrice = min(prices[i],minPrice)
+            dp[i] = max(dp[i-1],prices[i]-minPrice)
+        return max(dp)
+</code></pre>
+<p>因为dp[i] 只和 dp[i-1]有关，所以可以进行状态压缩</p>
+<pre><code class="Python">    def maxProfit(self, prices: List[int]) -&gt; int:
+        n = len(prices)
+        if n &lt; 0 : return 0
+        minPrice = prices[0]
+        maxProfit = 0
+        for i in range(n):
+            minPrice = min(prices[i],minPrice)
+            maxProfit = max(maxProfit,prices[i]-minPrice)
+        return maxProfit
+</code></pre>
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/06/20/SecretWorld/" data-toggle="tooltip" data-placement="top"
+                           title="SecretWorld">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-53-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C"><span class="toc-text">1. 53. 最大子序和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-322-%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2"><span class="toc-text">2. 322. 零钱兑换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-121-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA"><span class="toc-text">3. 121. 买卖股票的最佳时机</span></a></li></ol></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <br>
+                <ul class="list-inline text-center">
+                
+                
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 汉渴 2021
+                    <br>
+                    <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
+                    <br>
+                    Theme by <a target="_blank" rel="noopener" href="https://haojen.github.io/">Haojen Ma</a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/blog.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://Hhankaa.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- swiftype -->
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install','','2.0.0');
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!--wechat title img-->
+<img class="wechat-title-img" src="">
+</body>
+
+</html>
