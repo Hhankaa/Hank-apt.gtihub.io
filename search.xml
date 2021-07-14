@@ -77,6 +77,63 @@ def maxSubArray(nums):
 <li><p>$$<br>dp[i] = max(dp[i],dp[j]+1)<br>$$</p>
 </li>
 </ul>
+<h2 id="5-70-爬楼梯"><a href="#5-70-爬楼梯" class="headerlink" title="5. 70. 爬楼梯"></a>5. <a href="https://leetcode-cn.com/problems/climbing-stairs/">70. 爬楼梯</a></h2><ul>
+<li><p>这里要明确，因为爬楼梯只能爬1层和2层</p>
+</li>
+<li><p>所以我们爬n层，关注n-1层因为再爬一层就到了，关注n-2层因为再爬两层就到了</p>
+</li>
+<li><p>所以爬n层，<br>$$<br>dp[n] = dp[n-1]+dp[n-2]<br>$$</p>
+</li>
+<li><p>确定base case , dp[0] = dp[1] = 1</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2.回溯算法</title>
+    <url>/2021/07/09/2.%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95(DFS)/</url>
+    <content><![CDATA[<h1 id="回溯（DFS深度优先算法）"><a href="#回溯（DFS深度优先算法）" class="headerlink" title="回溯（DFS深度优先算法）"></a>回溯（DFS深度优先算法）</h1><p>其实回溯算法其实就是我们常说的 DFS 算法，本质上就是一种暴力穷举算法。</p>
+<p>废话不多说，直接上回溯算法框架。<strong>解决一个回溯问题，实际上就是一个决策树的遍历过程</strong>。你只需要思考 3 个问题：</p>
+<p>1、路径：也就是已经做出的选择。</p>
+<p>2、选择列表：也就是你当前可以做的选择。</p>
+<p>3、结束条件：也就是到达决策树底层，无法再做选择的条件。</p>
+<h2 id="一、全排列问题"><a href="#一、全排列问题" class="headerlink" title="一、全排列问题"></a>一、全排列问题</h2><img src="https://gblobscdn.gitbook.com/assets%2F-Me2HTYUybY4ojrYvI-8%2Fsync%2Fb016864ae8dd85f027f4bc983eb8871baa4e68a7.jpg?alt=media" style="zoom:50%;" />
+
+<p><strong>我们定义的</strong> <strong><code>backtrack</code></strong> <strong>函数其实就像一个指针，在这棵树上游走，同时要正确维护每个节点的属性，每当走到树的底层，其「路径」就是一个全排列</strong>。</p>
+<p>核心框架：</p>
+<pre><code class="java">for 选择 in 选择列表:
+    # 做选择
+    将该选择从选择列表移除
+    路径.add(选择)
+    backtrack(路径, 选择列表)
+    # 撤销选择
+    路径.remove(选择)
+    将该选择再加入选择列表
+</code></pre>
+<h2 id="二、N皇后问题"><a href="#二、N皇后问题" class="headerlink" title="二、N皇后问题"></a>二、N皇后问题</h2>]]></content>
+      <tags>
+        <tag>Algorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>3.广度优先（BFS）</title>
+    <url>/2021/07/14/3.%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%EF%BC%88BFS%EF%BC%89/</url>
+    <content><![CDATA[<h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><p><strong>1. 关键要点：在BFS中，关键点则是状态的选取和标记</strong></p>
+<ul>
+<li><img src="https://pic4.zhimg.com/80/v2-813b44a06012c6ae599a62aaa422c96b_720w.png" style="zoom:150%;" /></li>
+</ul>
+<p><strong>2. 数据结构上的运用</strong></p>
+<ul>
+<li><p>DFS用递归的形式，用到了栈结构，先进后出。</p>
+</li>
+<li><p>BFS选取状态用队列的形式，先进先出。</p>
+</li>
+</ul>
+<img src="https://pic.leetcode-cn.com/fdcd3bd27f4008948084f6ec86b58535e71f66862bd89a34bd6fe4cc42d68e89.gif" style="zoom:50%;" />
+
 ]]></content>
       <tags>
         <tag>Algorithm</tag>

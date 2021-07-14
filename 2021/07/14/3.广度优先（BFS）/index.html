@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        
+        3.广度优先（BFS）｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://Hhankaa.github.io/archives/">
+    <link rel="canonical" href="http://Hhankaa.github.io/2021/07/14/3.广度优先（BFS）/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -49,7 +49,7 @@
 <!-- hack iOS CSS :active style -->
 <body ontouchstart="" class="animated fadeIn">
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "false" data-istags="false
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top " id="nav-top" data-ispost = "true" data-istags="false
 " data-ishome = "false" >
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -122,200 +122,128 @@
 
 <!-- Main Content -->
 
+<!--only post-->
 
-<!-- Page Header -->
-<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 visible-xs-block visible-sm-block">
-    <div class="row">
-        <header class="intro-header">
-            <div class="container">
-                <div class="site-heading text-center">
-                    <div class="about-me">
-                        <!--移动端头部显示-->
-                        <img src=""/>
-                        <h5><a href="/about/">Hank Han</a></h5>
-                        <p></p>
+
+<img class="wechat-title-img"
+     src="">
+
+
+<style>
+    
+    header.intro-header {
+        background-image: url('')
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
+                <div class="post-heading">
+                    <h1>3.广度优先（BFS）</h1>
+                    
+                    <span class="meta">
+                         作者 Hank Han
+                        <span>
+                          日期 2021-07-14
+                         </span>
+                    </span>
+                    <div class="tags text-center">
+                        
+                        <a class="tag" href="/tags/#Algorithm"
+                           title="Algorithm">Algorithm</a>
+                        
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
     </div>
-</div>
-<!-- Main Content -->
-<div class="container custom-haojen-container">
-    <!-- Post Container -->
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
-            <!-- Main Content -->
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2021/07/14/3.广度优先（BFS）/">
-        <h2 class="post-title">
+    <div class="post-title-haojen">
+        <span>
             3.广度优先（BFS）
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2021-07-14
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                BFS1. 关键要点：在BFS中，关键点则是状态的选取和标记
-
-
-
-2. 数据结构上的运用
-
-DFS用递归的形式，用到了栈结构，先进后出。
-
-BFS选取状态用队列的形式，先进先出。
-
-
-
-
-
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2021/07/09/2.回溯算法(DFS)/">
-        <h2 class="post-title">
-            2.回溯算法
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2021-07-09
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                回溯（DFS深度优先算法）其实回溯算法其实就是我们常说的 DFS 算法，本质上就是一种暴力穷举算法。
-废话不多说，直接上回溯算法框架。解决一个回溯问题，实际上就是一个决策树的遍历过程。你只需要思考 3 个问题：
-1、路径：也就是已经做出的选择。
-2、选择列表：也就是你当前可以做的选择。
-3、结束..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2021/06/28/1.动态规划/">
-        <h2 class="post-title">
-            1.动态规划
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-28
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                动态规划动态规划，包含3个重要的概念： 1. 最优子结构 2. 边界3. 状态方程
-思考问题： 如何优化动态规划问题？如果dp[i] 只和dp[i-1]有关，那么可以使用【滚动变量】的方式将代码进行优化。
-
-当前状态至于前两个状态有关，只需要想办法存储前两个状态就可以了。
-
-1. 53. 最大子..
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-<div class="post-preview "
-     style="background-image: url('')">
-    <a href="/2021/06/20/SecretWorld/">
-        <h2 class="post-title">
-            SecretWorld
-        </h2>
-        <p class="post-meta">
-            <i class="fa fa-calendar" aria-hidden="true"></i> 2021-06-20
-        </p>
-        
-        <div class="post-content-preview">
-            <p>
-                #你为什么来到这里？– 关于这里的一切，这里是我的秘密基地；#今天还是觉得有点枯燥– 为什么没有一些值得我做的事情？还不如在学校学习东西。
-
-            </p>
-        </div>
-    </a>
-
-</div>
-
-<hr>
-
-
-
-
-<!-- 翻页 pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-        </div>
-        <!-- Sidebar Container -->
-        <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
-
-            <!-- About Me -->
-            <section class="visible-md visible-lg" style="padding: 0 18px">
-                <div class="short-about">
-                    <!--侧边栏头像-->
-                    
-                    <h5><a href="/about/">Hank Han</a></h5>
-                    
-                    <hr>
-                    <!-- SNS Link 社交 -->
-                    <ul class="list-inline">
-                        
-                        
-                        
-
-                        
-
-                        
-
-                        
-
-                        
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Featured Tags  标签 -->
-            
-
-            
-
-        </div>
+        </span>
     </div>
-</div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Container -->
+            <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
+                <h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><p><strong>1. 关键要点：在BFS中，关键点则是状态的选取和标记</strong></p>
+<ul>
+<li><img src="https://pic4.zhimg.com/80/v2-813b44a06012c6ae599a62aaa422c96b_720w.png" style="zoom:150%;" /></li>
+</ul>
+<p><strong>2. 数据结构上的运用</strong></p>
+<ul>
+<li><p>DFS用递归的形式，用到了栈结构，先进后出。</p>
+</li>
+<li><p>BFS选取状态用队列的形式，先进先出。</p>
+</li>
+</ul>
+<img src="https://pic.leetcode-cn.com/fdcd3bd27f4008948084f6ec86b58535e71f66862bd89a34bd6fe4cc42d68e89.gif" style="zoom:50%;" />
+
+
+                <hr>
+                
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/07/09/2.回溯算法(DFS)/" data-toggle="tooltip" data-placement="top"
+                           title="2.回溯算法">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+
+                
+
+
+                <!--加入新的评论系统-->
+                
+
+                
+
+            </div>
+
+            <div class="hidden-xs col-sm-3 toc-col">
+                <div class="toc-wrap">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#BFS"><span class="toc-text">BFS</span></a></li></ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+
+
+
+
 
 <!-- Footer -->
 <!-- Footer -->

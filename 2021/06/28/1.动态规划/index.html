@@ -242,11 +242,26 @@ def maxSubArray(nums):
 <li><p>$$<br>dp[i] = max(dp[i],dp[j]+1)<br>$$</p>
 </li>
 </ul>
+<h2 id="5-70-爬楼梯"><a href="#5-70-爬楼梯" class="headerlink" title="5. 70. 爬楼梯"></a>5. <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/climbing-stairs/">70. 爬楼梯</a></h2><ul>
+<li><p>这里要明确，因为爬楼梯只能爬1层和2层</p>
+</li>
+<li><p>所以我们爬n层，关注n-1层因为再爬一层就到了，关注n-2层因为再爬两层就到了</p>
+</li>
+<li><p>所以爬n层，<br>$$<br>dp[n] = dp[n-1]+dp[n-2]<br>$$</p>
+</li>
+<li><p>确定base case , dp[0] = dp[1] = 1</p>
+</li>
+</ul>
 
                 <hr>
                 
 
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2021/07/09/2.回溯算法(DFS)/" data-toggle="tooltip" data-placement="top"
+                           title="2.回溯算法">&larr; Previous Post</a>
+                    </li>
                     
                     
                     <li class="next">
@@ -270,7 +285,7 @@ def maxSubArray(nums):
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-53-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C"><span class="toc-text">1. 53. 最大子序和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-322-%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2"><span class="toc-text">2. 322. 零钱兑换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-121-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA"><span class="toc-text">3. 121. 买卖股票的最佳时机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-300-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97"><span class="toc-text">4. 300. 最长递增子序列</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-53-%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C"><span class="toc-text">1. 53. 最大子序和</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-322-%E9%9B%B6%E9%92%B1%E5%85%91%E6%8D%A2"><span class="toc-text">2. 322. 零钱兑换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-121-%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA"><span class="toc-text">3. 121. 买卖股票的最佳时机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-300-%E6%9C%80%E9%95%BF%E9%80%92%E5%A2%9E%E5%AD%90%E5%BA%8F%E5%88%97"><span class="toc-text">4. 300. 最长递增子序列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-70-%E7%88%AC%E6%A5%BC%E6%A2%AF"><span class="toc-text">5. 70. 爬楼梯</span></a></li></ol></li></ol>
                 </div>
             </div>
         </div>
