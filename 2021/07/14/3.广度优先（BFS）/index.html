@@ -187,6 +187,26 @@
 </ul>
 <img src="https://pic.leetcode-cn.com/fdcd3bd27f4008948084f6ec86b58535e71f66862bd89a34bd6fe4cc42d68e89.gif" style="zoom:50%;" />
 
+<p><strong>形象点说，DFS 是线，BFS 是面；DFS 是单打独斗，BFS 是集体行动。这个应该比较容易理解吧。</strong></p>
+<h1 id="1-111-二叉树的最小深度"><a href="#1-111-二叉树的最小深度" class="headerlink" title="1. 111. 二叉树的最小深度"></a>1. <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/">111. 二叉树的最小深度</a></h1><ul>
+<li>根据BFS齐头并进的特点，当第一次到达叶子节点的时候，此时就是最小深度</li>
+<li>需定义：</li>
+</ul>
+<ol>
+<li>Python中队列这样定义：</li>
+</ol>
+<pre><code class="python">from collections import deque
+
+queue = deque() # []
+queue.append(1) #[1]
+queue.append(2) #[1,2]
+queue.popleft() #[2]
+# 记住队列的特点，「先入先出」
+</code></pre>
+<ol start="2">
+<li>结束条件，当前到达叶子节点，该节点左右都不为零</li>
+<li>当该节点不是叶子节点的时候，就将左子节点和右子节点加入到队列中</li>
+</ol>
 
                 <hr>
                 
@@ -215,7 +235,7 @@
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#BFS"><span class="toc-text">BFS</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#BFS"><span class="toc-text">BFS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-111-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6"><span class="toc-text">1. 111. 二叉树的最小深度</span></a></li></ol>
                 </div>
             </div>
         </div>
