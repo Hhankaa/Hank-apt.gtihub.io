@@ -18,11 +18,11 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        3.广度优先（BFS）｜undefined
+        SpringBoot雷神｜undefined
         
     </title>
 
-    <link rel="canonical" href="http://Hhankaa.github.io/2021/07/14/3.广度优先（BFS）/">
+    <link rel="canonical" href="http://Hhankaa.github.io/2021/07/17/SpringBoot/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -143,18 +143,18 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 text-center">
                 <div class="post-heading">
-                    <h1>3.广度优先（BFS）</h1>
+                    <h1>SpringBoot雷神</h1>
                     
                     <span class="meta">
                          作者 Hank Han
                         <span>
-                          日期 2021-07-14
+                          日期 2021-07-17
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#Algorithm"
-                           title="Algorithm">Algorithm</a>
+                        <a class="tag" href="/tags/#SpringBoot"
+                           title="SpringBoot">SpringBoot</a>
                         
                     </div>
                 </div>
@@ -163,7 +163,7 @@
     </div>
     <div class="post-title-haojen">
         <span>
-            3.广度优先（BFS）
+            SpringBoot雷神
         </span>
     </div>
 </header>
@@ -174,59 +174,72 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h1 id="BFS"><a href="#BFS" class="headerlink" title="BFS"></a>BFS</h1><p><strong>1. 关键要点：在BFS中，关键点则是状态的选取和标记</strong></p>
-<ul>
-<li><img src="https://pic4.zhimg.com/80/v2-813b44a06012c6ae599a62aaa422c96b_720w.png" style="zoom:150%;" /></li>
+                <h1 id="SpringBoot"><a href="#SpringBoot" class="headerlink" title="SpringBoot"></a>SpringBoot</h1><p>Spring Boot 2 学习笔记（上）：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011863024/article/details/113667634">https://blog.csdn.net/u011863024/article/details/113667634</a></p>
+<p>Spring Boot 2 学习笔记（下）：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u011863024/article/details/113667946">https://blog.csdn.net/u011863024/article/details/113667946</a></p>
+<p>文档链接：<a target="_blank" rel="noopener" href="https://www.yuque.com/atguigu/springboot">https://www.yuque.com/atguigu/springboot</a></p>
+<p><strong>源码资源</strong>：</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1NCmg1FpNoyfla8jKc-V5CA">https://pan.baidu.com/s/1NCmg1FpNoyfla8jKc-V5CA</a><br>提取码：opb6<br>p43的html网页资源</p>
+<h2 id="1-入门：HelloWorld"><a href="#1-入门：HelloWorld" class="headerlink" title="1. 入门：HelloWorld"></a>1. 入门：HelloWorld</h2><h3 id="1-1开始"><a href="#1-1开始" class="headerlink" title="1.1开始"></a>1.1开始</h3><ul>
+<li><strong>构建</strong>maven工程，在pom文件众加入依赖</li>
+<li><strong>创建</strong>MainApplication主启动程序</li>
+<li><strong>构建</strong>controller层文件夹，在里面写对应的业务</li>
 </ul>
-<p><strong>2. 数据结构上的运用</strong></p>
-<ul>
-<li><p>DFS用递归的形式，用到了栈结构，先进后出。</p>
-</li>
-<li><p>BFS选取状态用队列的形式，先进先出。</p>
-</li>
-</ul>
-<img src="https://pic.leetcode-cn.com/fdcd3bd27f4008948084f6ec86b58535e71f66862bd89a34bd6fe4cc42d68e89.gif" style="zoom:50%;" />
-
-<p><strong>形象点说，DFS 是线，BFS 是面；DFS 是单打独斗，BFS 是集体行动。这个应该比较容易理解吧。</strong></p>
-<h1 id="1-111-二叉树的最小深度"><a href="#1-111-二叉树的最小深度" class="headerlink" title="1. 111. 二叉树的最小深度"></a>1. <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/">111. 二叉树的最小深度</a></h1><ul>
-<li>根据BFS齐头并进的特点，当第一次到达叶子节点的时候，此时就是最小深度</li>
-<li>需定义：</li>
-</ul>
-<ol>
-<li>Python中队列这样定义：</li>
-</ol>
-<pre><code class="python">from collections import deque
-
-queue = deque() # []
-queue.append(1) #[1]
-queue.append(2) #[1,2]
-queue.popleft() #[2]
-# 记住队列的特点，「先入先出」
+<h3 id="1-2-简化配置"><a href="#1-2-简化配置" class="headerlink" title="1.2 简化配置"></a>1.2 简化配置</h3><p>为了简化配置，SpringBoot将其抽离在Resources目录下的 application.properties 文件，在其中可以更改端口号，以及其他的一些配置，在官方文档中可以查询到具体的配置。</p>
+<h3 id="1-3简化部署"><a href="#1-3简化部署" class="headerlink" title="1.3简化部署"></a>1.3简化部署</h3><pre><code class="xml">&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
 </code></pre>
-<ol start="2">
-<li>结束条件，当前到达叶子节点，该节点左右都不为零</li>
-<li>当该节点不是叶子节点的时候，就将左子节点和右子节点加入到队列中</li>
+<p>引入插件，然后把项目打成jar包即可，这里要理解MAVEN的生命周期。</p>
+<ul>
+<li>取消掉cmd的快速编辑模式</li>
+</ul>
+<h2 id="2-了解SpringBoot的特点"><a href="#2-了解SpringBoot的特点" class="headerlink" title="2. 了解SpringBoot的特点"></a>2. 了解SpringBoot的特点</h2><h3 id="2-1-修改依赖版本"><a href="#2-1-修改依赖版本" class="headerlink" title="2.1 修改依赖版本"></a>2.1 修改依赖版本</h3><ol>
+<li>查看spring-boot-dependencies 里面规定当前依赖的版本用的key</li>
+<li>在当前项目里重写配置即可</li>
 </ol>
-<h1 id="2-752-打开转盘锁"><a href="#2-752-打开转盘锁" class="headerlink" title="2. 752. 打开转盘锁"></a>2. <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/open-the-lock/">752. 打开转盘锁</a></h1><p><strong>要点：</strong></p>
-<ol>
-<li>列表deadends包含了一组死亡数字，一旦拨轮的数字和列表中的任何一个元素相同，就不行；</li>
-<li>字符串target代表可以解锁的数字，需要给出最小的旋转次数</li>
+<pre><code class="xml">&lt;properties&gt;
+    &lt;mysql.version&gt;5.1.43&lt;/mysql.version&gt;
+&lt;/properties&gt;
+</code></pre>
+<h3 id="2-2-自动配置"><a href="#2-2-自动配置" class="headerlink" title="2.2 自动配置"></a>2.2 自动配置</h3><ul>
+<li>主程序所在的包，及其这个包的子包都会被访问到，例如controller  ，因此无需配置以前的包扫描。</li>
+<li>如果想改变扫描路径， @SpringBootApplication(scanBasePackages=”com.atguigu”)， </li>
+</ul>
+<pre><code class="java"> @SpringBootApplication(scanBasePackages=&quot;com.atguigu&quot;)
+ 等同于
+     @SpringBootConfiguration
+     @EnableBootConfigutation
+     @ComponentScan(&quot;com.atguigu.boot&quot;)
+</code></pre>
+<h3 id="2-3容器功能"><a href="#2-3容器功能" class="headerlink" title="2.3容器功能"></a>2.3容器功能</h3><ol>
+<li>Configuration </li>
 </ol>
+<ul>
+<li><p>Full 模式与 Lite 模式</p>
+<p>最佳实战：</p>
+<ul>
+<li><p>配置 类组件之间无依赖关系用Lite 模式加速容器启动过程，减少判断，<strong>也就是说不需要创建新组建时用Lite</strong></p>
+</li>
+<li><p>配置类组件之间有依赖关系，方法会被调用得到之前单例组件，用Full模式，<strong>保证取得的组件为ioc中的同一组件</strong></p>
+</li>
+</ul>
+</li>
+</ul>
 
                 <hr>
                 
 
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2021/07/17/SpringBoot/" data-toggle="tooltip" data-placement="top"
-                           title="SpringBoot雷神">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2021/07/09/2.回溯算法(DFS)/" data-toggle="tooltip" data-placement="top"
-                           title="2.回溯算法">Next Post &rarr;</a>
+                        <a href="/2021/07/14/3.广度优先（BFS）/" data-toggle="tooltip" data-placement="top"
+                           title="3.广度优先（BFS）">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -245,7 +258,7 @@ queue.popleft() #[2]
 
             <div class="hidden-xs col-sm-3 toc-col">
                 <div class="toc-wrap">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#BFS"><span class="toc-text">BFS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-111-%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E6%B7%B1%E5%BA%A6"><span class="toc-text">1. 111. 二叉树的最小深度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-752-%E6%89%93%E5%BC%80%E8%BD%AC%E7%9B%98%E9%94%81"><span class="toc-text">2. 752. 打开转盘锁</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringBoot"><span class="toc-text">SpringBoot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%85%A5%E9%97%A8%EF%BC%9AHelloWorld"><span class="toc-text">1. 入门：HelloWorld</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E5%BC%80%E5%A7%8B"><span class="toc-text">1.1开始</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%AE%80%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="toc-text">1.2 简化配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E7%AE%80%E5%8C%96%E9%83%A8%E7%BD%B2"><span class="toc-text">1.3简化部署</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BA%86%E8%A7%A3SpringBoot%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-text">2. 了解SpringBoot的特点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E4%BF%AE%E6%94%B9%E4%BE%9D%E8%B5%96%E7%89%88%E6%9C%AC"><span class="toc-text">2.1 修改依赖版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE"><span class="toc-text">2.2 自动配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E5%AE%B9%E5%99%A8%E5%8A%9F%E8%83%BD"><span class="toc-text">2.3容器功能</span></a></li></ol></li></ol></li></ol>
                 </div>
             </div>
         </div>
