@@ -223,6 +223,75 @@ queue.popleft() #[2]
 </ul>
 </li>
 </ul>
+<h3 id="2-4一些注解"><a href="#2-4一些注解" class="headerlink" title="2.4一些注解"></a>2.4一些注解</h3><pre><code>1. 配置类里面使用@Bean 标注在方法上给容器注册组件，默认也是单实例的
+2. 配置类本身也是组件
+3. proxyBeanMethods:代理bean的方法
+    两种配置：
+    Full(proxyBeanMethods = true)
+    Lite (proxyBeanMethods = false)
+    （全配置，轻量级配置）
+4. @Import
+    给容器中自动创建出这两个类型的组件，默认组件的名字就是全类名
+
+5. @ImportResource(&quot;classpath:beans.xml&quot;)导入Spring的配置文件
+</code></pre>
+<h3 id="2-5-SpringBoot设计模式"><a href="#2-5-SpringBoot设计模式" class="headerlink" title="2.5 SpringBoot设计模式"></a>2.5 SpringBoot设计模式</h3><ol>
+<li>SpringBoot 默认会在底层配好所有的组件，但是如果用户自己配置了以用户的优先</li>
+</ol>
+<p>总结：</p>
+<ul>
+<li><p>SpringBoot 先加载所有的自动配置类， xxxxAutoConfiguration</p>
+</li>
+<li><p>每个自动配置类按照条件进行生效，默认会绑定配置文件指定的值xxxxProperties里面拿。和配置文件进行了绑定</p>
+</li>
+<li><p>生效的配置类就会给容器中装配很多的组件</p>
+</li>
+<li><p>只要容器中有这些组件，相当于功能就有了</p>
+</li>
+<li><p>只要用户有自己配置的，就以用户优先。</p>
+</li>
+<li><p>定制化配置</p>
+<ul>
+<li>用户直接使用@Bean 替换底层组件</li>
+<li>用户去看这个组件是获取什么值就去修改</li>
+</ul>
+<p>xxxxAutoConfiguration –&gt; 组件 –&gt; xxxxProperties里面拿值 –&gt;application.properties</p>
+</li>
+</ul>
+<h3 id="2-6-SpringBoot最佳实战"><a href="#2-6-SpringBoot最佳实战" class="headerlink" title="2.6 SpringBoot最佳实战"></a>2.6 SpringBoot最佳实战</h3><ul>
+<li>引入场景依赖</li>
+<li>查看自动配置了哪些（选做）<ul>
+<li>自己分析，引入场景对应的自动配置一般都生效了</li>
+<li>配置文件中debug = true 开启自动配置报告。Negative (不生效)/Positive(生效)</li>
+</ul>
+</li>
+<li>是否需要修改<ul>
+<li>参照文档修改配置项<ul>
+<li>官方文档</li>
+<li>自己分析。xxxxProperties 绑定了配置文件的哪些前缀</li>
+</ul>
+</li>
+<li>自定义加入或者替换组件<ul>
+<li>@Bean @Component</li>
+</ul>
+</li>
+<li>自定义器 xxxxCustomizer</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-开发技巧"><a href="#3-开发技巧" class="headerlink" title="3. 开发技巧"></a>3. 开发技巧</h2><h3 id="3-1-Lombok"><a href="#3-1-Lombok" class="headerlink" title="3.1 Lombok"></a>3.1 Lombok</h3><p>简化Bean开发</p>
+<ol>
+<li>安装依赖</li>
+</ol>
+<pre><code class="xml">&lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+    &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+    &lt;version&gt;1.18.12&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<ol start="2">
+<li>搜索安装lombok插件</li>
+</ol>
 ]]></content>
       <tags>
         <tag>SpringBoot</tag>
